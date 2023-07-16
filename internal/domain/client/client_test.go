@@ -33,5 +33,5 @@ func TestValidateDocumentNumber(t *testing.T) {
 
 	_, err := NewClient("")
 
-	assert.Equal("Document Number is required", err.Error())
+	assert.Equal("Documento Number invalid", err.Error())
 }

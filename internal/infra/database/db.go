@@ -2,6 +2,8 @@ package database
 
 import (
 	"github.com/leonardogregoriocs/internal/domain/client"
+	"github.com/leonardogregoriocs/internal/domain/operations"
+	"github.com/leonardogregoriocs/internal/domain/transactions"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
@@ -14,7 +16,7 @@ func NewDb() *gorm.DB {
 		panic("Fail to connect to database")
 	}
 
-	db.AutoMigrate(&client.Client{})
+	db.AutoMigrate(&client.Client{}, &operations.OperationType{}, &transactions.Transactions{})
 
 	return db
 
