@@ -1,11 +1,12 @@
 package transactions
 
 import (
+	"errors"
 	"time"
 )
 
 type Transactions struct {
-	TransactionsID  int
+	ID              int
 	AccountID       int
 	OperationTypeID int
 	Amout           float64
@@ -13,6 +14,11 @@ type Transactions struct {
 }
 
 func NewTransaction(accountID int, operationTypeID int, amout float64) (*Transactions, error) {
+
+	if operationTypeID == 4 && amout < 0.01 || operationTypeID < 4 && amout > 0 {
+		return nil, errors.New("Operation Type invalid")
+	}
+
 	return &Transactions{
 		AccountID:       accountID,
 		OperationTypeID: operationTypeID,

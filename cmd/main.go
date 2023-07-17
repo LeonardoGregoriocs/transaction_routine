@@ -25,7 +25,8 @@ func main() {
 	}
 
 	TransactionsService := transactions.Service{
-		Repository: &database.TransactionsRepository{Db: db},
+		Repository:       &database.TransactionsRepository{Db: db},
+		ClientRepository: &database.ClientRepository{Db: db},
 	}
 
 	handler := endpoints.Handler{
