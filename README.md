@@ -51,7 +51,7 @@ Logo após, digitar o comando abaixo:
 
 Pronto, sua aplicação já está no ar! 
 
-Agora para consultar os endpoinst, basta utilizar as rotas abaixo: 
+Agora para consultar os endpoints, basta utilizar as rotas abaixo: 
 
   POST - http://localhost:8000/accounts - Criar um novo cliente. 
   
