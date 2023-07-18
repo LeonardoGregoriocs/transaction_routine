@@ -55,18 +55,42 @@ Agora para consultar os endpoinst, basta utilizar as rotas abaixo:
 
   POST - http://localhost:8000/accounts - Criar um novo cliente. 
   
-      {
-          "DocumentNumber": "111.222.333.45"
-      }
+  Input
+  ```json
+{
+    "DocumentNumber": "111.222.333.45"
+}
+  ```
+  Output
+  ```json
+{
+    "id": 1
+}
+  ```
       
   GET - http://localhost:8000/accounts/id - Buscar um cliente através do ID. 
-  
-    
+
+  Output
+  ```json
+{
+    "ID": 1,
+    "DocumentNumber": "11122233345"
+}  
+  ```
+
   POST - http://localhost:8000/transactions - Criar uma nova transação.
-  
-      {
-          "AccountID": 1,
-          "OperationTypeID": 4,
-          "Amout": 10
-      }
-    
+
+  Input
+  ```json
+{
+    "AccountID": 1,
+    "OperationTypeID": 4,
+    "Amout": 10
+}
+  ```
+  Output
+  ```json
+{
+    "id": 3
+}
+  ```
