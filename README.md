@@ -3,7 +3,7 @@
 Essas instruções permitirão que você obtenha uma cópia e consiga rodar o projeto em sua máquina local.
 
   ####  🖨️ Realize o clone do projeto:
-    https://github.com/LeonardoGregoriocs/transaction_routine.git
+    git clone https://github.com/LeonardoGregoriocs/transaction_routine.git
 
 ### 📋 Pré-requisitos & Instalação:
 
@@ -15,7 +15,7 @@ Essas instruções permitirão que você obtenha uma cópia e consiga rodar o pr
 
 ### ⬆️ Subindo o Banco de dados:
 
-Após realizar a instalação do docker, basta abrir um terminal e rodar o comando abaixo:
+Após realizar a instalação do docker, basta abrir um terminal dentro da pasta em que colou o projeto e rodar o comando abaixo:
 
     docker-compose up -d --build
 
@@ -27,23 +27,26 @@ O comando acima irá construir e subir 2 containeres do docker:
 
 Logo após, é somente acessar o seguinte endereço em seu navegador: 
     
-    - localhost:7000
+    localhost:7000
 
 Para acessar o banco de dados, basta colocar as credenciais abaixo: 
 
-    - Sistema --> PostgresSQL
-    - Servidor --> database
-    - Usuário --> user
-    - Senha --> user123
-    - Base de dados --> dataclient
+    Sistema --> PostgresSQL
+    Servidor --> database
+    Usuário --> user
+    Senha --> user123
+    Base de dados --> dataclient
 
 ![image](https://github.com/LeonardoGregoriocs/transaction_routine/assets/83976271/84d45001-bb14-4d57-9d2d-0f77efd55570)
 
 ### ⬆️ Subindo a aplicação:
 
-Para subir a aplicação, basta abrir um terminal em sua IDE, e digitar os códigos abaixo: 
+Para subir a aplicação, basta abrir um terminal em sua IDE, e digitar o comando abaixo para entrar na pasta cmd: 
 
     cd cmd
+
+Logo após, digitar o comando abaixo: 
+
     go run main.go
 
 Pronto, sua aplicação já está no ar! 
