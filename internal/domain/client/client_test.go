@@ -9,7 +9,7 @@ import (
 )
 
 var (
-	documentNumber = "123456789"
+	documentNumber = "11122233345"
 )
 
 func TestNewClient(t *testing.T) {
@@ -34,4 +34,17 @@ func TestValidateDocumentNumber(t *testing.T) {
 	_, err := NewClient("")
 
 	assert.Equal("Documento Number invalid", err.Error())
+}
+
+func TestNewClientWhenIsSucess(t *testing.T) {
+	assert := assert.New(t)
+
+	clientExpected := &Client{
+		DocumentNumber:   documentNumber,
+		DateCreateUpdate: time.Now(),
+	}
+
+	newClient, _ := NewClient(documentNumber)
+
+	assert.Equal(newClient.DocumentNumber, clientExpected.DocumentNumber)
 }
