@@ -17,7 +17,7 @@ Essas instruções permitirão que você obtenha uma cópia e consiga rodar o pr
 
 Após realizar a instalação do docker, basta abrir um terminal e rodar o comando abaixo:
 
-    - docker-compose up -d --build
+    docker-compose up -d --build
 
 O comando acima irá construir e subir 2 containeres do docker: 
 
@@ -43,8 +43,8 @@ Para acessar o banco de dados, basta colocar as credenciais abaixo:
 
 Para subir a aplicação, basta abrir um terminal em sua IDE, e digitar os códigos abaixo: 
 
-    - cd cmd
-    - go run main.go
+    cd cmd
+    go run main.go
 
 Pronto, sua aplicação já está no ar! 
 
