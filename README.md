@@ -53,7 +53,20 @@ Pronto, sua aplicação já está no ar!
 
 Agora para consultar os endpoinst, basta utilizar as rotas abaixo: 
 
-    - POST - http://localhost:8000/accounts - Criar um novo cliente. 
-    - GET - http://localhost:8000/accounts/id - Buscar um cliente através do ID. 
-    - POST - http://localhost:8000/transactions - Criar uma nova transação.
+  POST - http://localhost:8000/accounts - Criar um novo cliente. 
+  
+      {
+          "DocumentNumber": "111.222.333.45"
+      }
+      
+  GET - http://localhost:8000/accounts/id - Buscar um cliente através do ID. 
+  
+    
+  POST - http://localhost:8000/transactions - Criar uma nova transação.
+  
+      {
+          "AccountID": 1,
+          "OperationTypeID": 4,
+          "Amout": 10
+      }
     
