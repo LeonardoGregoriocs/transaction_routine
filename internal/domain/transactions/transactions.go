@@ -14,6 +14,9 @@ type Transactions struct {
 }
 
 func NewTransaction(accountID int, operationTypeID int, amout float64) (*Transactions, error) {
+	if accountID == 0 || operationTypeID == 0 {
+		return nil, errors.New("Incomplete data")
+	}
 
 	if operationTypeID == 4 && amout < 0.01 || operationTypeID < 4 && amout > 0 {
 		return nil, errors.New("Operation Type invalid")

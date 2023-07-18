@@ -1,6 +1,9 @@
 package client
 
 import (
+	"errors"
+	"regexp"
+
 	"github.com/leonardogregoriocs/internal/contract"
 	internalerrors "github.com/leonardogregoriocs/internal/internalErrors"
 )
@@ -10,8 +13,20 @@ type Service struct {
 }
 
 func (s *Service) CreateClient(newClient contract.NewClient) (int, error) {
+	documentNumberObj, err := regexp.Compile(`[-.,-]`)
+	documentNumber := documentNumberObj.ReplaceAllString(newClient.DocumentNumber, "")
 
-	client, err := NewClient(newClient.DocumentNumber)
+	if err != nil {
+		return 1, errors.New("Error formated Document Number")
+	}
+
+	clientExist, err := s.Repository.GetClientByDocumentNumber(documentNumber)
+
+	if clientExist == documentNumber {
+		return 1, errors.New("Client exist")
+	}
+
+	client, err := NewClient(documentNumber)
 	if err != nil {
 		return 1, err
 	}

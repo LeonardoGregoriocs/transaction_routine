@@ -19,3 +19,9 @@ func (c *ClientRepository) GetBy(id int) (*client.Client, error) {
 	result := c.Db.First(&client, id)
 	return &client, result.Error
 }
+
+func (c *ClientRepository) GetClientByDocumentNumber(documentNumber string) (string, error) {
+	var client client.Client
+	result := c.Db.Find(&client, "document_number = ?", documentNumber)
+	return client.DocumentNumber, result.Error
+}
