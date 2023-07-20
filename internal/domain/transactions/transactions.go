@@ -11,6 +11,7 @@ type Transactions struct {
 	OperationTypeID int
 	Amout           float64
 	EventDate       time.Time
+	Balance         float64
 }
 
 func NewTransaction(accountID int, operationTypeID int, amout float64) (*Transactions, error) {

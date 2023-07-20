@@ -25,3 +25,9 @@ func (c *ClientRepository) GetClientByDocumentNumber(documentNumber string) (str
 	result := c.Db.Find(&client, "document_number = ?", documentNumber)
 	return client.DocumentNumber, result.Error
 }
+
+func (c *ClientRepository) UpdateCredit(amout float64, id int) error {
+	var client client.Client
+	result := c.Db.Model(&client).Where("id = ?", id).Update("available_credit_limit", amout)
+	return result.Error
+}
